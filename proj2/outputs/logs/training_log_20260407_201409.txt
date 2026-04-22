@@ -1,0 +1,20 @@
+2026-04-07 20:14:09,038 [INFO] --- Starting new pipeline run: 20260407_201409 ---
+2026-04-07 20:14:09,038 [INFO] Using device: cpu
+2026-04-07 20:14:09,292 [INFO] Data prepped. Training to predict 20 Lego categories.
+2026-04-07 20:14:09,293 [INFO] Building model and moving to GPU...
+2026-04-07 20:14:09,452 [INFO] Starting training loop...
+2026-04-07 20:19:49,160 [INFO] Train Loss: 6.5916 | Train Acc: 0.4687
+2026-04-07 20:19:49,161 [INFO] Val Loss:   4.1659 | Val Acc:   0.5968
+2026-04-07 20:19:49,161 [INFO] Validation loss improved from inf to 4.1659. Saving model...
+2026-04-07 20:25:54,983 [INFO] Train Loss: 4.7591 | Train Acc: 0.5400
+2026-04-07 20:25:54,983 [INFO] Val Loss:   6.0929 | Val Acc:   0.4052
+2026-04-07 20:31:59,537 [INFO] Train Loss: 5.7393 | Train Acc: 0.5413
+2026-04-07 20:31:59,538 [INFO] Val Loss:   6.6632 | Val Acc:   0.5214
+2026-04-07 20:38:10,685 [INFO] Train Loss: 5.4227 | Train Acc: 0.5725
+2026-04-07 20:38:10,685 [INFO] Val Loss:   4.2727 | Val Acc:   0.5783
+2026-04-07 20:44:30,645 [INFO] Train Loss: 5.5358 | Train Acc: 0.5886
+2026-04-07 20:44:30,646 [INFO] Val Loss:   6.1354 | Val Acc:   0.4796
+2026-04-07 20:50:41,083 [INFO] Train Loss: 5.5801 | Train Acc: 0.5851
+2026-04-07 20:50:41,083 [INFO] Val Loss:   5.2985 | Val Acc:   0.6017
+2026-04-07 20:56:46,720 [INFO] Train Loss: 5.7913 | Train Acc: 0.5892
+2026-04-07 20:56:46,720 [INFO] Val Loss:   7.2736 | Val Acc:   0.4728

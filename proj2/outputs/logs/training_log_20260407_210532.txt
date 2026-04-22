@@ -1,0 +1,32 @@
+2026-04-07 21:05:32,262 [INFO] --- Starting new pipeline run: 20260407_210532 ---
+2026-04-07 21:05:32,262 [INFO] Using device: cpu
+2026-04-07 21:05:32,522 [INFO] Data prepped. Training to predict 20 Lego categories.
+2026-04-07 21:05:32,522 [INFO] Building model and moving to GPU...
+2026-04-07 21:05:32,701 [INFO] Starting training loop...
+2026-04-07 21:11:32,376 [INFO] Train Loss: 1.7760 | Train Acc: 0.5085
+2026-04-07 21:11:32,376 [INFO] Val Loss:   1.3845 | Val Acc:   0.6148
+2026-04-07 21:11:32,376 [INFO] Validation loss improved from inf to 1.3845. Saving model...
+2026-04-07 21:17:33,795 [INFO] Train Loss: 1.2988 | Train Acc: 0.6263
+2026-04-07 21:17:33,795 [INFO] Val Loss:   1.2217 | Val Acc:   0.6449
+2026-04-07 21:17:33,795 [INFO] Validation loss improved from 1.3845 to 1.2217. Saving model...
+2026-04-07 21:23:37,340 [INFO] Train Loss: 1.1763 | Train Acc: 0.6539
+2026-04-07 21:23:37,340 [INFO] Val Loss:   1.1732 | Val Acc:   0.6600
+2026-04-07 21:23:37,340 [INFO] Validation loss improved from 1.2217 to 1.1732. Saving model...
+2026-04-07 21:29:39,731 [INFO] Train Loss: 1.1202 | Train Acc: 0.6644
+2026-04-07 21:29:39,731 [INFO] Val Loss:   1.1501 | Val Acc:   0.6556
+2026-04-07 21:29:39,732 [INFO] Validation loss improved from 1.1732 to 1.1501. Saving model...
+2026-04-07 21:35:44,100 [INFO] Train Loss: 1.0794 | Train Acc: 0.6735
+2026-04-07 21:35:44,100 [INFO] Val Loss:   1.0846 | Val Acc:   0.6829
+2026-04-07 21:35:44,100 [INFO] Validation loss improved from 1.1501 to 1.0846. Saving model...
+2026-04-07 21:41:55,967 [INFO] Train Loss: 1.0433 | Train Acc: 0.6837
+2026-04-07 21:41:55,967 [INFO] Val Loss:   1.0871 | Val Acc:   0.6775
+2026-04-07 21:47:56,701 [INFO] Train Loss: 1.0122 | Train Acc: 0.6981
+2026-04-07 21:47:56,702 [INFO] Val Loss:   1.0898 | Val Acc:   0.6717
+2026-04-07 21:53:57,710 [INFO] Train Loss: 1.0107 | Train Acc: 0.6900
+2026-04-07 21:53:57,710 [INFO] Val Loss:   1.0667 | Val Acc:   0.6804
+2026-04-07 21:53:57,711 [INFO] Validation loss improved from 1.0846 to 1.0667. Saving model...
+2026-04-07 22:00:21,895 [INFO] Train Loss: 0.9837 | Train Acc: 0.7000
+2026-04-07 22:00:21,896 [INFO] Val Loss:   1.0610 | Val Acc:   0.6863
+2026-04-07 22:00:21,896 [INFO] Validation loss improved from 1.0667 to 1.0610. Saving model...
+2026-04-07 22:06:40,787 [INFO] Train Loss: 0.9770 | Train Acc: 0.7007
+2026-04-07 22:06:40,787 [INFO] Val Loss:   1.0877 | Val Acc:   0.6702

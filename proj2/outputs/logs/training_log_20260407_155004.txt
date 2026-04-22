@@ -1,0 +1,4 @@
+2026-04-07 15:50:04,562 [INFO] --- Starting new pipeline run: 20260407_155004 ---
+2026-04-07 15:50:04,562 [INFO] Using device: cpu
+2026-04-07 15:50:04,860 [INFO] Data prepped. Training to predict 20 Lego categories.
+2026-04-07 15:50:05,513 [INFO] Building model and moving to GPU...

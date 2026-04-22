@@ -1,0 +1,39 @@
+2026-04-07 22:08:11,139 [INFO] --- Starting new pipeline run: 20260407_220811 ---
+2026-04-07 22:08:11,139 [INFO] Using device: cpu
+2026-04-07 22:08:11,446 [INFO] Data prepped. Training to predict 20 Lego categories.
+2026-04-07 22:08:11,447 [INFO] Building model and moving to GPU...
+2026-04-07 22:08:11,622 [INFO] Starting training loop...
+2026-04-07 22:14:14,240 [INFO] Train Loss: 1.7580 | Train Acc: 0.5122
+2026-04-07 22:14:14,241 [INFO] Val Loss:   1.3858 | Val Acc:   0.6099
+2026-04-07 22:14:14,245 [INFO] Validation loss improved from inf to 1.3858. Saving model...
+2026-04-07 22:20:33,692 [INFO] Train Loss: 1.2961 | Train Acc: 0.6254
+2026-04-07 22:20:33,693 [INFO] Val Loss:   1.2389 | Val Acc:   0.6498
+2026-04-07 22:20:33,693 [INFO] Validation loss improved from 1.3858 to 1.2389. Saving model...
+2026-04-07 22:26:32,607 [INFO] Train Loss: 1.1824 | Train Acc: 0.6489
+2026-04-07 22:26:32,607 [INFO] Val Loss:   1.1830 | Val Acc:   0.6552
+2026-04-07 22:26:32,607 [INFO] Validation loss improved from 1.2389 to 1.1830. Saving model...
+2026-04-07 22:33:02,075 [INFO] Train Loss: 1.1220 | Train Acc: 0.6613
+2026-04-07 22:33:02,075 [INFO] Val Loss:   1.1339 | Val Acc:   0.6590
+2026-04-07 22:33:02,075 [INFO] Validation loss improved from 1.1830 to 1.1339. Saving model...
+2026-04-07 22:39:01,492 [INFO] Train Loss: 1.0736 | Train Acc: 0.6748
+2026-04-07 22:39:01,493 [INFO] Val Loss:   1.1369 | Val Acc:   0.6673
+2026-04-07 22:44:59,416 [INFO] Train Loss: 1.0562 | Train Acc: 0.6779
+2026-04-07 22:44:59,417 [INFO] Val Loss:   1.0732 | Val Acc:   0.6868
+2026-04-07 22:44:59,417 [INFO] Validation loss improved from 1.1339 to 1.0732. Saving model...
+2026-04-07 22:50:54,532 [INFO] Train Loss: 1.0136 | Train Acc: 0.6937
+2026-04-07 22:50:54,532 [INFO] Val Loss:   1.1041 | Val Acc:   0.6727
+2026-04-07 22:56:52,978 [INFO] Train Loss: 1.0021 | Train Acc: 0.6977
+2026-04-07 22:56:52,979 [INFO] Val Loss:   1.0591 | Val Acc:   0.6892
+2026-04-07 22:56:52,979 [INFO] Validation loss improved from 1.0732 to 1.0591. Saving model...
+2026-04-07 23:02:53,563 [INFO] Train Loss: 0.9910 | Train Acc: 0.7004
+2026-04-07 23:02:53,563 [INFO] Val Loss:   1.0616 | Val Acc:   0.6921
+2026-04-07 23:08:54,130 [INFO] Train Loss: 0.9787 | Train Acc: 0.7021
+2026-04-07 23:08:54,130 [INFO] Val Loss:   1.0658 | Val Acc:   0.6819
+2026-04-07 23:08:54,131 [INFO] Training Complete!
+2026-04-07 23:08:54,179 [INFO] Loaded best model weights for evaluation.
+2026-04-07 23:08:54,180 [INFO] Evaluating model on test set...
+2026-04-07 23:09:55,479 [INFO] Generating Interpretability Visualizations...
+2026-04-07 23:09:56,693 [INFO] Saving final model...
+2026-04-07 23:09:56,772 [INFO] Pipeline complete! Model saved to outputs/saved_models/production_lego_model.pth
+2026-04-07 23:09:56,773 [INFO] Label encoder saved to outputs/saved_models/label_encoder.pkl
+2026-04-07 23:09:56,773 [INFO] Pipeline completed successfully.

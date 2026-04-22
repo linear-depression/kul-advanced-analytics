@@ -28,7 +28,7 @@ Real-world datasets follow a "long-tail" distribution; some themes (like *Star W
 
 Due to the multilabel nature of the task, standard "Accuracy" and 2D Confusion Matrices are mathematically invalid. The model was evaluated on a reserved Test Set using the **F1-Score**, which balances Precision and Recall.
 
-![alt text](proj2/outputs/plots/f1_scores_20260408_090920.png)
+![alt text](outputs/plots/f1_scores_20260408_090920.png)
 
 ### F1-Score Analysis
 The model achieved varying levels of success across the 20 themes:
@@ -38,7 +38,7 @@ The model achieved varying levels of success across the 20 themes:
 ## 6. Model Interpretability (Grad-CAM)
 To ensure the CNN is learning actual Lego features and not "cheating" by finding artifacts in the image backgrounds (Data Leakage), we implemented **Gradient-weighted Class Activation Mapping (Grad-CAM)**. Grad-CAM visualizes the spatial gradients of the final convolutional layer to show exactly *where* the model is looking when it makes a prediction.
 
-![alt text](proj2/outputs/plots/gradcam_comparison_20260408_090920.png)
+![alt text](outputs/plots/gradcam_comparison_20260408_090920.png)
 
 ### Grad-CAM Insights:
 *   **Correct Guesses:** The model is successfully learning discriminative, structural features. For the *Friends* figures, it consistently highlights unique hairpieces and torso shapes. For the *Duplo* figures, it recognizes the classic, oversized facial proportions.

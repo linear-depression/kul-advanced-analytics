@@ -1,0 +1,228 @@
+[data]
+train_filename = "customer_clv_train.csv"
+test_filename = "customer_clv_test.csv"
+transactions_filename = "transactions_2016_2017.csv"
+raw_feature_filename = "customer_features_v4.parquet"
+clean_feature_filename = "customer_features_v4_clean.parquet"
+submission_filename = "v01_champion_xgb_mae_pp.csv"
+customer_id_col = "cust_id"
+target_col = "revenue_2018_2019"
+prediction_col = "prediction"
+transaction_parse_dates = ["order_date", "pack_date"]
+required_transaction_columns = [
+  "cust_id",
+  "sale_id",
+  "prod_id",
+  "order_date",
+  "pack_date",
+  "sale_revenue",
+]
+dropped_feature_date_columns = ["last_order_date", "first_order_date"]
+
+[data.transaction_defaults]
+prod_size = "nan"
+returned_to_shop_id = "nan"
+sale_discount_applied = 0.0
+prod_brand = "unknown"
+prod_season = "nan"
+prod_color = "unknown"
+prod_type_1 = "unknown"
+prod_type_3 = "unknown"
+prod_type_4 = "unknown"
+prod_type_5 = "unknown"
+prod_heel = "nan"
+prod_material = "nan"
+prod_print = "nan"
+prod_clasp = "nan"
+prod_comfort_sole = "nan"
+prod_comfort_wear = "nan"
+prod_web_only = 0.0
+prod_outlet = 0.0
+
+[eda]
+target_quantiles = [0.10, 0.25, 0.50, 0.75, 0.90, 0.95, 0.99]
+product_quality_columns = ["prod_size", "prod_comfort_sole"]
+top_product_quality_values = 20
+categorical_columns = [
+  "prod_type_1",
+  "prod_type_3",
+  "prod_type_4",
+  "prod_type_5",
+  "prod_brand",
+  "prod_color",
+  "prod_season",
+  "prod_heel",
+  "prod_material",
+  "prod_print",
+  "prod_clasp",
+  "prod_comfort_wear",
+]
+top_brand_count = 10
+top_season_count = 15
+quick_feature_columns = [
+  "n_orders",
+  "n_items",
+  "total_revenue_1617",
+  "mean_revenue",
+  "recency_days",
+  "tenure_days",
+  "total_discount",
+  "n_unique_brands",
+  "n_returns",
+  "return_rate",
+]
+positive_target_threshold = 0.0
+
+[features]
+reference_date = "2018-01-01"
+rare_quantile = 0.20
+dominant_type_values = ["boys", "girls", "men", "women"]
+one_time_order_count = 1
+repeat_order_min = 2
+loyal_order_min = 10
+high_value_revenue_min = 250.0
+high_frequency_order_min = 5
+bought_recently_days = 90
+recent_3m_days = 90
+recent_6m_days = 180
+revenue_growth_fallback = 20.0
+revenue_growth_cap = 20.0
+history_years = [2016, 2017]
+trend_start_year = 2016
+trend_end_year = 2017
+returner_history_year = 2017
+family_type_min_count = 3
+purely_women_share = 1.0
+recent_collection_min_year = 2017
+old_stock_max_year = 2015
+holiday_months = [11, 12]
+
+[features.brand_groups]
+top = [
+  "Gabor",
+  "Tamaris",
+  "Geox",
+  "STONES and BONES",
+  "Converse",
+  "Nike",
+  "Tommy Hilfiger",
+  "adidas",
+  "River Woods",
+  "Timberland",
+  "Marco Tozzi",
+  "Scapa",
+  "Hampton Bays",
+  "Rieker",
+  "Birkenstock",
+]
+premium = ["Tommy Hilfiger", "Timberland", "Birkenstock", "Geox"]
+sport = ["Nike", "adidas", "Converse"]
+classic = ["Gabor", "Tamaris", "Rieker"]
+
+[plots]
+dpi = 120
+target_hist_bins = 80
+target_log_hist_bins = 80
+customer_order_clip = 20
+customer_order_bins = 20
+customer_revenue_clip = 1000.0
+customer_revenue_bins = 60
+top_type_count = 10
+top_brand_count = 15
+top_season_count = 15
+recency_quantile_bins = 10
+monetary_quantile_bins = 10
+frequency_bucket_bins = [0, 1, 2, 3, 5, 10, 1000]
+frequency_bucket_labels = ["1", "2", "3", "4-5", "6-10", "10+"]
+
+[modeling]
+random_seed = 11
+validation_size = 0.20
+xgb_single_objective = "reg:absoluteerror"
+xgb_tweedie_objective = "reg:tweedie"
+xgb_hurdle_classifier_objective = "binary:logistic"
+xgb_hurdle_classifier_metric = "auc"
+xgb_hurdle_regressor_objective = "reg:absoluteerror"
+xgb_mse_objective = "reg:squarederror"
+xgb_log_objective = "reg:squarederror"
+xgb_pseudo_huber_objective = "reg:pseudohubererror"
+xgb_fallback_objective = "reg:squarederror"
+zero_threshold_grid = [0, 0.5, 1, 2, 3, 5, 7, 10, 15, 20, 25, 30]
+champion_n_splits = 5
+champion_zero_threshold = 25.0
+
+[modeling.ridge_params]
+alpha = 1.0
+
+[modeling.decision_tree_params]
+max_depth = 8
+min_samples_leaf = 50
+
+[modeling.knn_params]
+n_neighbors = 10
+weights = "distance"
+n_jobs = -1
+
+[modeling.random_forest_params]
+n_estimators = 200
+min_samples_leaf = 20
+max_features = "sqrt"
+n_jobs = -1
+
+[modeling.xgb_common_params]
+n_estimators = 1000
+learning_rate = 0.05
+max_depth = 6
+min_child_weight = 50
+subsample = 0.85
+colsample_bytree = 0.85
+verbosity = 0
+n_jobs = -1
+early_stopping_rounds = 50
+
+[modeling.xgb_tweedie_params]
+tweedie_variance_power = 1.5
+eval_metric = "mae"
+
+[modeling.xgb_extended_params]
+n_estimators = 2000
+learning_rate = 0.03
+max_depth = 7
+min_child_weight = 30
+subsample = 0.85
+colsample_bytree = 0.85
+verbosity = 0
+n_jobs = -1
+early_stopping_rounds = 100
+
+[modeling.xgb_cv_params]
+n_estimators = 1500
+learning_rate = 0.05
+max_depth = 6
+min_child_weight = 50
+subsample = 0.85
+colsample_bytree = 0.85
+verbosity = 0
+n_jobs = -1
+early_stopping_rounds = 50
+
+[modeling.xgb_final_params]
+n_estimators = 150
+learning_rate = 0.05
+max_depth = 6
+min_child_weight = 50
+subsample = 0.85
+colsample_bytree = 0.85
+verbosity = 0
+n_jobs = -1
+
+[workflow]
+show_plots = true
+save_plots = true
+save_features = true
+run_course_baselines = true
+run_xgboost_models = true
+run_extended_xgboost = true
+run_cross_validation = true
+run_submissions = true
+include_knn = true

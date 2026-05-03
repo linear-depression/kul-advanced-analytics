@@ -5,21 +5,33 @@ description = "Advanced Analytics Project 1"
 readme = "README.md"
 requires-python = ">=3.10"
 dependencies = [
-    "pandas",
-    "numpy",
-    "matplotlib",
-    "seaborn",
-    "scikit-learn",
     "jupyter",
-    "ipykernel"
+    "ipykernel",
+    "matplotlib",
+    "numpy",
+    "pandas",
+    "pyarrow",
+    "scikit-learn",
+    "scipy",
+    "seaborn",
+    "tomli; python_version < '3.11'",
+    "xgboost",
 ]
 
 [build-system]
 requires = ["hatchling"]
 build-backend = "hatchling.build"
 
-[tool.uv]
-dev-dependencies = [
+[tool.hatch.build.targets.wheel]
+packages = ["src/proj1"]
+
+[tool.pytest.ini_options]
+addopts = "-p no:capture"
+testpaths = ["tests"]
+
+[dependency-groups]
+dev = [
+    "pytest",
     "ruff",
-    "ty"
+    "ty",
 ]

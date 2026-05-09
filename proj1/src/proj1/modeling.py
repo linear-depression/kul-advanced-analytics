@@ -152,13 +152,13 @@ def run_course_baselines(
     ridge = Ridge(**_with_random_state(config.ridge_params, config.random_seed))
     ridge.fit(prep.X_train_scaled, y_train)
     pred = ridge.predict(prep.X_val_scaled)
-    results.append(evaluate_predictions("B1. Ridge Regression", y_val, pred, "B. Course methods"))
+    results.append(evaluate_predictions("B1. Ridge Regression", y_val, pred, "B. Basic methods"))
     predictions["ridge"] = clip_revenue_predictions(pred)
 
     ridge_log = Ridge(**_with_random_state(config.ridge_params, config.random_seed))
     ridge_log.fit(prep.X_train_scaled, np.log1p(y_train))
     pred = np.expm1(ridge_log.predict(prep.X_val_scaled))
-    results.append(evaluate_predictions("B1b. Ridge on log1p(y)", y_val, pred, "B. Course methods"))
+    results.append(evaluate_predictions("B1b. Ridge on log1p(y)", y_val, pred, "B. Basic methods"))
     predictions["ridge_log"] = clip_revenue_predictions(pred)
 
     tree = DecisionTreeRegressor(
@@ -166,14 +166,14 @@ def run_course_baselines(
     )
     tree.fit(prep.X_train_imp, y_train)
     pred = tree.predict(prep.X_val_imp)
-    results.append(evaluate_predictions("B2. Decision Tree", y_val, pred, "B. Course methods"))
+    results.append(evaluate_predictions("B2. Decision Tree", y_val, pred, "B. Basic methods"))
     predictions["decision_tree"] = clip_revenue_predictions(pred)
 
     if include_knn:
         knn = KNeighborsRegressor(**config.knn_params)
         knn.fit(prep.X_train_scaled, y_train)
         pred = knn.predict(prep.X_val_scaled)
-        results.append(evaluate_predictions("B3. KNN", y_val, pred, "B. Course methods"))
+        results.append(evaluate_predictions("B3. KNN", y_val, pred, "B. Basic methods"))
         predictions["knn"] = clip_revenue_predictions(pred)
 
     forest = RandomForestRegressor(
@@ -181,7 +181,7 @@ def run_course_baselines(
     )
     forest.fit(prep.X_train_imp, y_train)
     pred = forest.predict(prep.X_val_imp)
-    results.append(evaluate_predictions("B4. Random Forest", y_val, pred, "B. Course methods"))
+    results.append(evaluate_predictions("B4. Random Forest", y_val, pred, "B. Basic methods"))
     predictions["random_forest"] = clip_revenue_predictions(pred)
 
     artifacts.update(
@@ -306,6 +306,18 @@ def run_extended_xgboost_models(
         predictions["xgb_c1_post_processed"] = pred_pp
 
     return ModelRun(results_frame(results), artifacts=artifacts, predictions=predictions)
+
+
+def run_long_tail_xgboost_models(
+    X_train: pd.DataFrame,
+    X_val: pd.DataFrame,
+    y_train: pd.Series,
+    y_val: pd.Series,
+    config: ModelConfig,
+) -> ModelRun:
+    """Train and evaluate only the Group D long-tail-aware XGBoost variants."""
+    xgb = _import_xgboost()
+    return run_extended_xgboost_models(xgb, X_train, X_val, y_train, y_val, config)
 
 
 def run_improved_xgboost_trials(
@@ -439,6 +451,125 @@ def run_mae_aligned_hurdle(
             "classifier_auc": float(roc_auc_score(y_val_binary, prob_returner)),
         },
         predictions={"mae_aligned_hurdle": best_prediction, **predictions},
+    )
+
+
+def run_high_value_classification_experiment(
+    X_train: pd.DataFrame,
+    X_val: pd.DataFrame,
+    y_train: pd.Series,
+    y_val: pd.Series,
+    config: ModelConfig,
+    params: dict[str, Any],
+    thresholds: list[float],
+) -> pd.DataFrame:
+    """Train threshold classifiers to test whether high future revenue is separable."""
+    xgb = _import_xgboost()
+    xgb_params = _with_random_state(params, config.random_seed)
+    rows = []
+    for threshold in thresholds:
+        y_train_bin = (y_train > threshold).astype(int)
+        y_val_bin = (y_val > threshold).astype(int)
+        if y_train_bin.sum() < 100 or y_val_bin.sum() < 100:
+            continue
+        clf_params = {**xgb_params, "eval_metric": config.xgb_hurdle_classifier_metric}
+        clf = xgb.XGBClassifier(objective=config.xgb_hurdle_classifier_objective, **clf_params)
+        clf.fit(X_train, y_train_bin, eval_set=[(X_val, y_val_bin)], verbose=False)
+        prob = clf.predict_proba(X_val)[:, 1]
+        rows.append(
+            {
+                "threshold": threshold,
+                "auc": float(roc_auc_score(y_val_bin, prob)),
+                "positive_rate_train": float(y_train_bin.mean() * 100),
+                "positive_rate_val": float(y_val_bin.mean() * 100),
+                "n_positive_train": int(y_train_bin.sum()),
+                "n_positive_val": int(y_val_bin.sum()),
+                "best_iteration": getattr(clf, "best_iteration", None),
+            }
+        )
+    return pd.DataFrame(rows)
+
+
+def run_multi_tier_hurdle(
+    X_train: pd.DataFrame,
+    X_val: pd.DataFrame,
+    y_train: pd.Series,
+    y_val: pd.Series,
+    config: ModelConfig,
+    params: dict[str, Any],
+    high_threshold: float,
+) -> ModelRun:
+    """Train the multi-tier hurdle model from the original notebook."""
+    xgb = _import_xgboost()
+    xgb_params = _with_random_state(params, config.random_seed)
+    started_at = time.time()
+
+    y_train_returner = (y_train > 0).astype(int)
+    y_val_returner = (y_val > 0).astype(int)
+    clf_params = {**xgb_params, "eval_metric": config.xgb_hurdle_classifier_metric}
+    clf_t1 = xgb.XGBClassifier(objective=config.xgb_hurdle_classifier_objective, **clf_params)
+    clf_t1.fit(X_train, y_train_returner, eval_set=[(X_val, y_val_returner)], verbose=False)
+    prob_returner = clf_t1.predict_proba(X_val)[:, 1]
+    auc_t1 = float(roc_auc_score(y_val_returner, prob_returner))
+
+    returner_mask_train = y_train > 0
+    X_train_returners = X_train[returner_mask_train]
+    y_train_high = (y_train[returner_mask_train] > high_threshold).astype(int)
+    returner_mask_val = y_val > 0
+    X_val_returners = X_val[returner_mask_val]
+    y_val_high = (y_val[returner_mask_val] > high_threshold).astype(int)
+    clf_t2 = xgb.XGBClassifier(objective=config.xgb_hurdle_classifier_objective, **clf_params)
+    clf_t2.fit(X_train_returners, y_train_high, eval_set=[(X_val_returners, y_val_high)], verbose=False)
+    prob_high_given_return = clf_t2.predict_proba(X_val)[:, 1]
+    auc_t2 = float(roc_auc_score(y_val_high, clf_t2.predict_proba(X_val_returners)[:, 1]))
+
+    low_mask_train = (y_train > 0) & (y_train <= high_threshold)
+    low_mask_val = (y_val > 0) & (y_val <= high_threshold)
+    reg_t3a = xgb.XGBRegressor(objective=config.xgb_hurdle_regressor_objective, **xgb_params)
+    reg_t3a.fit(
+        X_train[low_mask_train],
+        y_train[low_mask_train],
+        eval_set=[(X_val[low_mask_val], y_val[low_mask_val])],
+        verbose=False,
+    )
+    pred_low = np.clip(reg_t3a.predict(X_val), 0, high_threshold * 1.5)
+
+    high_mask_train = y_train > high_threshold
+    high_mask_val = y_val > high_threshold
+    reg_t3b = xgb.XGBRegressor(objective=config.xgb_hurdle_regressor_objective, **xgb_params)
+    reg_t3b.fit(
+        X_train[high_mask_train],
+        np.log1p(y_train[high_mask_train]),
+        eval_set=[(X_val[high_mask_val], np.log1p(y_val[high_mask_val]))],
+        verbose=False,
+    )
+    pred_high = np.clip(np.expm1(reg_t3b.predict(X_val)), high_threshold, None)
+
+    expected_given_return = (1 - prob_high_given_return) * pred_low + prob_high_given_return * pred_high
+    prediction = clip_revenue_predictions(prob_returner * expected_given_return)
+    result = evaluate_predictions("E1. Multi-Tier Hurdle Model", y_val, prediction, "E. Multi-tier")
+    return ModelRun(
+        results_frame([result]),
+        artifacts={
+            "clf_t1": clf_t1,
+            "clf_t2": clf_t2,
+            "reg_t3a": reg_t3a,
+            "reg_t3b": reg_t3b,
+            "prob_returner": prob_returner,
+            "prob_high_given_return": prob_high_given_return,
+            "pred_low": pred_low,
+            "pred_high": pred_high,
+            "expected_given_return": expected_given_return,
+            "auc_t1": auc_t1,
+            "auc_t2": auc_t2,
+            "seconds": time.time() - started_at,
+            "high_threshold": high_threshold,
+            "n_train_returners": int(returner_mask_train.sum()),
+            "n_val_returners": int(returner_mask_val.sum()),
+            "high_rate_train": float(y_train_high.mean() * 100),
+            "high_rate_val": float(y_val_high.mean() * 100),
+        },
+        predictions={"multi_tier_hurdle": prediction},
     )
 
 

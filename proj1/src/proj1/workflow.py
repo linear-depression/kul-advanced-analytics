@@ -28,6 +28,7 @@ from proj1.modeling import (
     make_submission,
     prepare_modeling_data,
     run_course_baselines,
+    run_long_tail_xgboost_models,
     run_sanity_baselines,
     run_xgboost_suite,
     save_submission,
@@ -87,8 +88,9 @@ def run_eda(
     config: ProjectConfig,
     show_plots: bool | None = None,
     save_plots: bool | None = None,
+    generate_plots: bool = True,
 ) -> EDAResults:
-    """Run EDA tables and optional plot generation."""
+    """Run EDA tables and optionally generate the EDA plots."""
     paths.ensure_output_dirs()
     show_plots = config.workflow.show_plots if show_plots is None else show_plots
     save_plots = config.workflow.save_plots if save_plots is None else save_plots
@@ -103,69 +105,71 @@ def run_eda(
     quick = quick_customer_features(train, transactions, config.data, config.features, config.eda)
     quick_signals = quick_signal_tables(quick, config.data, config.eda)
 
-    plot_outputs = {
-        "target_distribution": plot_target_distribution(
-            train,
-            config.data,
-            config.plots,
-            output_dir=paths.plots_dir,
-            show=show_plots,
-            save=save_plots,
-        ),
-        "target_log_distribution": plot_target_log_distribution(
-            train,
-            config.data,
-            config.plots,
-            output_dir=paths.plots_dir,
-            show=show_plots,
-            save=save_plots,
-        ),
-        "missing_values": plot_missing_values(
-            missing,
-            config.plots,
-            output_dir=paths.plots_dir,
-            show=show_plots,
-            save=save_plots,
-        ),
-        "customer_activity": plot_customer_activity(
-            customer_stats,
-            config.plots,
-            output_dir=paths.plots_dir,
-            show=show_plots,
-            save=save_plots,
-        ),
-        "categorical_distributions": plot_categorical_distributions(
-            transactions,
-            config.plots,
-            output_dir=paths.plots_dir,
-            show=show_plots,
-            save=save_plots,
-        ),
-        "recency_vs_target": plot_recency_vs_target(
-            quick,
-            config.data,
-            config.plots,
-            output_dir=paths.plots_dir,
-            show=show_plots,
-            save=save_plots,
-        ),
-        "frequency_vs_target": plot_frequency_vs_target(
-            quick,
-            config.data,
-            config.plots,
-            output_dir=paths.plots_dir,
-            show=show_plots,
-            save=save_plots,
-        ),
-        "monetary_vs_target": plot_monetary_vs_target(
-            quick,
-            config.data,
-            config.plots,
-            output_dir=paths.plots_dir,
-            show=show_plots,
-            save=save_plots,
-        ),
-    }
+    plot_outputs = {}
+    if generate_plots:
+        plot_outputs = {
+            "target_distribution": plot_target_distribution(
+                train,
+                config.data,
+                config.plots,
+                output_dir=paths.plots_dir,
+                show=show_plots,
+                save=save_plots,
+            ),
+            "target_log_distribution": plot_target_log_distribution(
+                train,
+                config.data,
+                config.plots,
+                output_dir=paths.plots_dir,
+                show=show_plots,
+                save=save_plots,
+            ),
+            "missing_values": plot_missing_values(
+                missing,
+                config.plots,
+                output_dir=paths.plots_dir,
+                show=show_plots,
+                save=save_plots,
+            ),
+            "customer_activity": plot_customer_activity(
+                customer_stats,
+                config.plots,
+                output_dir=paths.plots_dir,
+                show=show_plots,
+                save=save_plots,
+            ),
+            "categorical_distributions": plot_categorical_distributions(
+                transactions,
+                config.plots,
+                output_dir=paths.plots_dir,
+                show=show_plots,
+                save=save_plots,
+            ),
+            "recency_vs_target": plot_recency_vs_target(
+                quick,
+                config.data,
+                config.plots,
+                output_dir=paths.plots_dir,
+                show=show_plots,
+                save=save_plots,
+            ),
+            "frequency_vs_target": plot_frequency_vs_target(
+                quick,
+                config.data,
+                config.plots,
+                output_dir=paths.plots_dir,
+                show=show_plots,
+                save=save_plots,
+            ),
+            "monetary_vs_target": plot_monetary_vs_target(
+                quick,
+                config.data,
+                config.plots,
+                output_dir=paths.plots_dir,
+                show=show_plots,
+                save=save_plots,
+            ),
+        }
     return EDAResults(
         target=target,
         product_diagnostics=product_diag,
@@ -270,6 +274,17 @@ def run_main_models(
         modeling.y_val,
         config.modeling,
         include_extended=include_extended,
+    )
+
+
+def run_long_tail_models(modeling: ModelingResults, config: ProjectConfig):
+    """Run the Group D long-tail-aware XGBoost variants."""
+    return run_long_tail_xgboost_models(
+        modeling.X_train,
+        modeling.X_val,
+        modeling.y_train,
+        modeling.y_val,
+        config.modeling,
     )
 
 

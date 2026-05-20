@@ -1,0 +1,254 @@
+Id,Label,modularity_class,Eccentricity,closnesscentrality,harmonicclosnesscentrality,betweenesscentrality,weighted indegree,weighted outdegree,Weighted Degree,indegree,outdegree,Degree,eigencentrality,pageranks
+9/11 hijackers,9/11 hijackers,0,0,0,0,0,0,0,0,0,0,0,0,0
+local airstrips,local airstrips,0,0,0,0,0,0,0,0,0,0,0,0,0
+Aeroflot,Aeroflot,2,8,0.203431,0.222741,0,0,1,1,0,1,1,0.005687,0.002015
+Edward Snowden,Edward Snowden,2,7,0.254992,0.301463,1605,10,15,25,6,5,11,0.024154,0.032805
+Al Gore,Al Gore,1,5,0.379863,0.414357,0,0,1,1,0,1,1,0.099837,0.00214
+Jeffrey Epstein,Jeffrey Epstein,1,4,0.610294,0.748494,12057.509463,106,117,223,42,63,105,1,0.241132
+Alan M. Dershowitz,Alan M. Dershowitz,3,5,0.454795,0.523795,4452.574561,2,39,41,2,25,27,0.266733,0.061249
+Jane Doe #3 (HOUSE_OVERSIGHT_010735) (HOUSE_OVERSIGHT_010735),Jane Doe #3 (HOUSE_OVERSIGHT_010735) (HOUSE_OVERSIGHT_010735),3,6,0.313208,0.334739,0,1,0,1,1,0,1,0.029146,0.0022
+"United States District Court, Southern District of Florida","United States District Court, Southern District of Florida",3,6,0.313208,0.334739,0,1,0,1,1,0,1,0.029146,0.0022
+Virginia Roberts Giuffre,Virginia Roberts Giuffre,3,5,0.41604,0.450502,165,3,3,6,2,3,5,0.150609,0.006568
+Ghislaine Maxwell,Ghislaine Maxwell,3,5,0.435696,0.476104,634.254253,9,7,16,4,6,10,0.187673,0.019374
+Palm Beach Police Department,Palm Beach Police Department,3,6,0.313208,0.334739,0,2,0,2,1,0,1,0.029146,0.003501
+law enforcement,law enforcement,3,6,0.313208,0.334739,0,1,0,1,1,0,1,0.029146,0.0022
+October 2005,October 2005,3,6,0.313208,0.334739,0,1,0,1,1,0,1,0.029146,0.0022
+flight on November 20 2005,flight on November 20 2005,3,6,0.313208,0.334739,0,1,0,1,1,0,1,0.029146,0.0022
+Tatiana,Tatiana,3,6,0.313208,0.334739,0,4,0,4,1,0,1,0.029146,0.006104
+flight logs,flight logs,3,6,0.314991,0.339759,15.333333,3,0,3,2,0,2,0.040914,0.004934
+members of Mr. Epstein’s legal team,members of Mr. Epstein’s legal team,3,6,0.313208,0.334739,0,1,0,1,1,0,1,0.029146,0.0022
+Emmy Taylor,Emmy Taylor,3,6,0.313208,0.334739,0,1,0,1,1,0,1,0.029146,0.0022
+Claire Hazel,Claire Hazel,3,6,0.313208,0.334739,0,1,0,1,1,0,1,0.029146,0.0022
+Joel Pashcow,Joel Pashcow,3,6,0.313208,0.334739,0,1,0,1,1,0,1,0.029146,0.0022
+Mandy,Mandy,3,6,0.313208,0.334739,0,1,0,1,1,0,1,0.029146,0.0022
+Sarah Kellen,Sarah Kellen,1,5,0.425641,0.457028,103.084809,3,2,5,2,2,4,0.151562,0.005629
+Adriana Mucinska,Adriana Mucinska,1,6,0.332665,0.360141,103.084809,3,0,3,2,0,2,0.051725,0.004387
+Tatianna Kovylskna,Tatianna Kovylskna,3,6,0.313208,0.334739,0,1,0,1,1,0,1,0.029146,0.0022
+Police Detective Joe Recarey,Police Detective Joe Recarey,3,6,0.313208,0.334739,0,1,0,1,1,0,1,0.029146,0.0022
+Kiev to meet,Kiev to meet,3,6,0.313208,0.334739,0,1,0,1,1,0,1,0.029146,0.0022
+Palm Beach Police Detective Joe Recarey,Palm Beach Police Detective Joe Recarey,3,6,0.313208,0.334739,0,1,0,1,1,0,1,0.029146,0.0022
+federal and state authorities,federal and state authorities,2,6,0.328063,0.357831,1859,1,2,3,1,2,3,0.036522,0.005374
+Town of Palm Beach,Town of Palm Beach,3,5,0.409877,0.440462,0,2,0,2,2,0,2,0.128984,0.003442
+Jane Doe #3,Jane Doe #3,3,5,0.409877,0.440462,0,1,1,2,1,1,2,0.128984,0.003442
+Alireza Ittihadieh,Alireza Ittihadieh,1,5,0.381609,0.418373,79.5,0,3,3,0,2,2,0.10321,0.004908
+G550 aircraft,G550 aircraft,13,6,0.282313,0.304518,3,2,0,2,2,0,2,0.023179,0.003589
+Andrew Farkas,Andrew Farkas,1,6,0.276667,0.292972,0,0,1,1,0,1,1,0.010423,0.002296
+Kelly Friendly,Kelly Friendly,1,5,0.381609,0.418373,165,4,0,4,2,0,2,0.101881,0.006576
+Andrés Pastrana Arango,Andrés Pastrana Arango,19,5,0.383372,0.41988,31.809516,1,1,2,1,1,2,0.111376,0.003517
+Bill Clinton,Bill Clinton,1,5,0.413965,0.484137,1970.225053,30,55,85,6,15,21,0.205817,0.074632
+Jeffrey Epstein's private plane,Jeffrey Epstein's private plane,1,6,0.293286,0.317871,0,3,0,3,1,0,1,0.022579,0.004179
+Jeffrey Epstein's aircraft (Lolita Express),Jeffrey Epstein's aircraft (Lolita Express),1,6,0.293286,0.317871,0,1,0,1,1,0,1,0.022579,0.001992
+Jeffrey Epstein's jet,Jeffrey Epstein's jet,10,6,0.294849,0.3249,5.066667,9,0,9,3,0,3,0.039012,0.010582
+Adriana Mucinska Ross,Adriana Mucinska Ross,1,6,0.293286,0.317871,0,2,0,2,1,0,1,0.022579,0.003086
+Ira Magaziner,Ira Magaziner,1,6,0.293286,0.317871,0,2,0,2,1,0,1,0.022579,0.003086
+Rodney Slater,Rodney Slater,1,6,0.293286,0.317871,0,2,0,2,1,0,1,0.022579,0.003086
+Naomi Campbell,Naomi Campbell,1,5,0.394299,0.431928,0,2,1,3,1,1,2,0.122416,0.004328
+Chauntae Davies,Chauntae Davies,1,6,0.293286,0.317871,0,1,0,1,1,0,1,0.022579,0.001992
+Jeffrey Epstein's Boeing 727,Jeffrey Epstein's Boeing 727,1,6,0.293286,0.317871,0,1,0,1,1,0,1,0.022579,0.001992
+Jeffrey Epstein's private jet,Jeffrey Epstein's private jet,1,6,0.293286,0.317871,0,2,0,2,1,0,1,0.022579,0.003086
+Jeffrey Epstein's plane,Jeffrey Epstein's plane,1,6,0.293286,0.317871,0,1,0,1,1,0,1,0.022579,0.001992
+Carvana Co.,Carvana Co.,4,0,0,0,0,0,0,0,0,0,0,0,0
+DriveTime,DriveTime,4,0,0,0,0,0,0,0,0,0,0,0,0
+Chris Tucker,Chris Tucker,19,5,0.383372,0.41988,31.809516,8,1,9,2,1,3,0.111376,0.003517
+Dave Rogers,Dave Rogers,3,5,0.382488,0.421386,58.325439,1,2,3,1,2,3,0.116073,0.005057
+David Brenner,David Brenner,5,0,0,0,0,0,0,0,0,0,0,0,0
+Monday,Monday,5,0,0,0,0,0,0,0,0,0,0,0,0
+David Edinger,David Edinger,6,0,0,0,0,0,0,0,0,0,0,0,0
+ACJ319 aircraft,ACJ319 aircraft,6,0,0,0,0,0,0,0,0,0,0,0,0
+David Rodgers,David Rodgers,1,5,0.379863,0.414357,0,0,1,1,0,1,1,0.099837,0.00214
+David Stern,David Stern,1,5,0.379863,0.414357,0,1,3,4,1,1,2,0.099837,0.004625
+Detective Michelle Pagan,Detective Michelle Pagan,7,5,0.381609,0.418373,165,0,2,2,0,2,2,0.101881,0.004546
+Jet Aviation,Jet Aviation,7,6,0.276667,0.292972,0,1,0,1,1,0,1,0.010423,0.00283
+Donald Trump,Donald Trump,12,5,0.398082,0.443775,1439,7,3,10,5,3,8,0.124684,0.017356
+the author,the author,12,6,0.285223,0.303414,0,1,0,1,1,0,1,0.013464,0.002537
+Leon,Leon,12,6,0.285223,0.303414,0,1,0,1,1,0,1,0.013464,0.002537
+Doug Band,Doug Band,10,6,0.294326,0.321888,0,0,2,2,0,2,2,0.027622,0.002991
+Eben Cassell,Eben Cassell,3,5,0.409877,0.440462,0,0,2,2,0,2,2,0.128984,0.003442
+Ed Boyden,Ed Boyden,8,0,0,0,0,0,0,0,0,0,0,0,0
+travel agent,travel agent,8,0,0,0,0,0,0,0,0,0,0,0,0
+Moscow,Moscow,2,8,0.203431,0.222741,0,7,0,7,1,0,1,0.005687,0.008712
+Hong Kong,Hong Kong,2,8,0.203431,0.222741,0,5,0,5,1,0,1,0.005687,0.00648
+Aeroflot flight SU213,Aeroflot flight SU213,2,8,0.203431,0.222741,0,1,0,1,1,0,1,0.005687,0.002015
+Aeroflot flight to Moscow,Aeroflot flight to Moscow,2,8,0.203431,0.222741,0,1,0,1,1,0,1,0.005687,0.002015
+Russia,Russia,2,8,0.203431,0.222741,0,1,0,1,1,0,1,0.005687,0.002015
+Ehud Barak,Ehud Barak,19,5,0.386946,0.427912,360.809516,1,3,4,1,3,4,0.115798,0.007896
+Jerusalem,Jerusalem,19,6,0.279461,0.296787,0,1,0,1,1,0,1,0.012081,0.002576
+Israeli delegation,Israeli delegation,19,6,0.279461,0.296787,0,1,0,1,1,0,1,0.012081,0.002576
+Eric Roth,Eric Roth,12,5,0.390588,0.428213,165,0,6,6,0,3,3,0.115468,0.010305
+World Wrestling Entertainment,World Wrestling Entertainment,12,6,0.281356,0.29759,0,1,0,1,1,0,1,0.01181,0.002358
+Ernest Garcia III,Ernest Garcia III,4,0,0,0,0,0,0,0,0,0,0,0,0
+FBI,FBI,1,5,0.379863,0.414357,0,0,1,1,0,1,1,0.099837,0.00214
+General Alexander,General Alexander,9,0,0,0,0,0,0,0,0,0,0,0,0
+"Washington, D.C.","Washington, D.C.",9,0,0,0,0,0,0,0,0,0,0,0,0
+Jeffrey Epstein over 300 times during investigation period,Jeffrey Epstein over 300 times during investigation period,3,6,0.304029,0.319478,0,1,0,1,1,0,1,0.019189,0.002075
+Jane Doe 102,Jane Doe 102,3,6,0.304029,0.319478,0,1,0,1,1,0,1,0.019189,0.002075
+Jeffrey Epstein and narrator,Jeffrey Epstein and narrator,3,6,0.304029,0.319478,0,1,0,1,1,0,1,0.019189,0.002075
+Lawrence Summers,Lawrence Summers,10,5,0.386047,0.425402,67.375,1,10,11,1,2,3,0.12407,0.013284
+Glenn Greenwald,Glenn Greenwald,11,0,0,0,0,0,0,0,0,0,0,0,0
+Brazil,Brazil,11,0,0,0,0,0,0,0,0,0,0,0,0
+Graydon Carter,Graydon Carter,1,6,0.293286,0.317871,0,0,1,1,0,1,1,0.022579,0.001992
+Gregg Launer,Gregg Launer,12,6,0.289199,0.316968,653,1,3,4,1,3,4,0.01855,0.010395
+Global Express XRS,Global Express XRS,12,7,0.224628,0.238325,0,1,0,1,1,0,1,0.003532,0.003107
+Wayne Huizenga,Wayne Huizenga,12,7,0.224628,0.238325,0,1,0,1,1,0,1,0.003532,0.003107
+Guy Amico,Guy Amico,13,6,0.281356,0.300502,0,0,1,1,0,1,1,0.012637,0.002199
+Larry Visoski,Larry Visoski,13,5,0.390588,0.438454,894.5,2,14,16,2,6,8,0.114805,0.022948
+Harrison,Harrison,14,0,0,0,0,0,0,0,0,0,0,0,0
+Julian Snowden,Julian Snowden,14,0,0,0,0,0,0,0,0,0,0,0,0
+Hillary Rodham Clinton,Hillary Rodham Clinton,15,6,0.280405,0.30261,329,0,3,3,0,3,3,0.01351,0.00838
+"approximately 20,000 miles in six days","approximately 20,000 miles in six days",15,7,0.219287,0.231153,0,1,0,1,1,0,1,0.002777,0.003273
+Paris,Paris,15,5,0.385151,0.421386,489,2,0,2,2,0,2,0.102614,0.004515
+80 countries,80 countries,15,7,0.219287,0.231153,0,1,0,1,1,0,1,0.002777,0.003273
+International Jet,International Jet,12,6,0.285223,0.303414,0,0,1,1,0,1,1,0.013464,0.002537
+James Patterson,James Patterson,16,0,0,0,0,0,0,0,0,0,0,0,0
+Australia,Australia,16,0,0,0,0,0,0,0,0,0,0,0,0
+his plane,his plane,1,5,0.379863,0.414357,0,1,0,1,1,0,1,0.099837,0.00214
+727 airplane,727 airplane,1,5,0.379863,0.414357,0,1,0,1,1,0,1,0.099837,0.00214
+"Air Ghislaine, Inc.","Air Ghislaine, Inc.",1,5,0.379863,0.414357,0,2,0,2,1,0,1,0.099837,0.003383
+Jane Doe 102 (HOUSE_OVERSIGHT_010585),Jane Doe 102 (HOUSE_OVERSIGHT_010585),1,5,0.379863,0.414357,0,1,0,1,1,0,1,0.099837,0.00214
+underage girls,underage girls,1,5,0.379863,0.414357,0,1,0,1,1,0,1,0.099837,0.00214
+sexual assaults,sexual assaults,1,5,0.379863,0.414357,0,1,0,1,1,0,1,0.099837,0.00214
+"Ghislaine Maxwell, Virginia Roberts, and ET","Ghislaine Maxwell, Virginia Roberts, and ET",1,5,0.379863,0.414357,0,1,0,1,1,0,1,0.099837,0.00214
+Alan Dershowitz and Tatiana,Alan Dershowitz and Tatiana,1,5,0.379863,0.414357,0,1,0,1,1,0,1,0.099837,0.00214
+Defendant,Defendant,1,5,0.379863,0.414357,0,1,0,1,1,0,1,0.099837,0.00214
+Virginia L. Giuffre,Virginia L. Giuffre,1,5,0.379863,0.414357,0,2,0,2,1,0,1,0.099837,0.003383
+U.S. Virgin Islands,U.S. Virgin Islands,1,5,0.379863,0.414357,0,1,0,1,1,0,1,0.099837,0.00214
+"Bill Clinton, Kevin Spacey, Chris Tucker","Bill Clinton, Kevin Spacey, Chris Tucker",1,5,0.379863,0.414357,0,2,0,2,1,0,1,0.099837,0.003383
+interstate commerce,interstate commerce,1,5,0.379863,0.414357,0,1,0,1,1,0,1,0.099837,0.00214
+sexual assaults on underage minors,sexual assaults on underage minors,1,5,0.379863,0.414357,0,1,0,1,1,0,1,0.099837,0.00214
+"Prince Andrew, Duke of York","Prince Andrew, Duke of York",19,5,0.383372,0.41988,31.809516,4,1,5,2,1,3,0.111376,0.003517
+Kevin Spacey,Kevin Spacey,19,5,0.383372,0.41988,31.809516,12,1,13,2,1,3,0.111376,0.003517
+multiple passengers including celebrities and political figures,multiple passengers including celebrities and political figures,1,5,0.379863,0.414357,0,1,0,1,1,0,1,0.099837,0.00214
+Ron Burkle,Ron Burkle,19,5,0.383372,0.41988,31.809516,2,1,3,2,1,3,0.111376,0.003517
+Casey Wasserman,Casey Wasserman,1,5,0.379863,0.414357,0,1,0,1,1,0,1,0.099837,0.00214
+Sarah Ransome,Sarah Ransome,1,5,0.379863,0.414357,0,1,0,1,1,0,1,0.099837,0.00214
+Evian water,Evian water,1,5,0.379863,0.414357,0,1,0,1,1,0,1,0.099837,0.00214
+Boeing 727,Boeing 727,1,5,0.379863,0.414357,0,2,0,2,1,0,1,0.099837,0.003383
+Virginia,Virginia,1,5,0.379863,0.414357,0,1,0,1,1,0,1,0.099837,0.00214
+Lawrence Henry Summers,Lawrence Henry Summers,19,5,0.383372,0.41988,31.809516,2,1,3,2,1,3,0.111376,0.003517
+three young women,three young women,1,5,0.379863,0.414357,0,1,0,1,1,0,1,0.099837,0.00214
+TED conference,TED conference,1,5,0.379863,0.414357,0,2,0,2,1,0,1,0.099837,0.003383
+private 727 plane,private 727 plane,1,5,0.379863,0.414357,0,1,0,1,1,0,1,0.099837,0.00214
+TED conference participants,TED conference participants,1,5,0.379863,0.414357,0,1,0,1,1,0,1,0.099837,0.00214
+Thorbjørn Jagland,Thorbjørn Jagland,1,5,0.379863,0.414357,0,1,0,1,1,0,1,0.099837,0.00214
+London,London,1,5,0.379863,0.414357,0,1,0,1,1,0,1,0.099837,0.00214
+dinner event for President Clinton,dinner event for President Clinton,1,5,0.379863,0.414357,0,1,0,1,1,0,1,0.099837,0.00214
+President Clinton,President Clinton,1,5,0.379863,0.414357,0,2,1,3,1,1,2,0.099837,0.00214
+dinner event,dinner event,1,5,0.379863,0.414357,0,1,0,1,1,0,1,0.099837,0.00214
+Saint Thomas,Saint Thomas,1,5,0.379863,0.414357,0,1,0,1,1,0,1,0.099837,0.00214
+unnamed recipient,unnamed recipient,1,5,0.379863,0.414357,0,1,0,1,1,0,1,0.099837,0.00214
+Tuesday,Tuesday,1,5,0.379863,0.414357,0,1,0,1,1,0,1,0.099837,0.00214
+flight,flight,1,5,0.379863,0.414357,0,1,0,1,1,0,1,0.099837,0.00214
+Jean Luc Brunel,Jean Luc Brunel,1,5,0.379863,0.414357,0,1,0,1,1,0,1,0.099837,0.00214
+RAF Marham,RAF Marham,1,5,0.379863,0.414357,0,1,0,1,1,0,1,0.099837,0.00214
+Joel,Joel,1,5,0.379863,0.414357,0,3,0,3,1,0,1,0.099837,0.004625
+Benny Shabtai,Benny Shabtai,1,5,0.379863,0.414357,0,1,0,1,1,0,1,0.099837,0.00214
+Tarek El Sayed,Tarek El Sayed,20,5,0.383372,0.41988,328,2,0,2,2,0,2,0.102243,0.004526
+JEGE Inc.,JEGE Inc.,1,5,0.379863,0.414357,0,1,0,1,1,0,1,0.099837,0.00214
+Gulfstream jet,Gulfstream jet,1,5,0.379863,0.414357,0,1,0,1,1,0,1,0.099837,0.00214
+Gulfstream and Boeing 727,Gulfstream and Boeing 727,1,5,0.379863,0.414357,0,1,0,1,1,0,1,0.099837,0.00214
+Avram Noam Chomsky,Avram Noam Chomsky,1,5,0.379863,0.414357,0,1,0,1,1,0,1,0.099837,0.00214
+Barry Cohen,Barry Cohen,1,5,0.379863,0.414357,0,1,11,12,1,1,2,0.099837,0.014563
+Palm Beach International Airport,Palm Beach International Airport,1,5,0.379863,0.414357,0,1,0,1,1,0,1,0.099837,0.00214
+recipient,recipient,1,5,0.379863,0.414357,0,2,0,2,1,0,1,0.099837,0.003383
+United States on Tuesday,United States on Tuesday,1,5,0.379863,0.414357,0,1,0,1,1,0,1,0.099837,0.00214
+7 to 7:30 p.m. wheels up,7 to 7:30 p.m. wheels up,1,5,0.379863,0.414357,0,1,0,1,1,0,1,0.099837,0.00214
+Boeing B727 aircraft sale transaction,Boeing B727 aircraft sale transaction,1,5,0.379863,0.414357,0,1,0,1,1,0,1,0.099837,0.00214
+Julian Assange,Julian Assange,2,8,0.203431,0.222741,0,0,1,1,0,1,1,0.005687,0.002015
+Kathy Gore Walters,Kathy Gore Walters,17,0,0,0,0,0,0,0,0,0,0,0,0
+Middle East and Central Asian clients,Middle East and Central Asian clients,17,0,0,0,0,0,0,0,0,0,0,0,0
+Kathy Ruemmler,Kathy Ruemmler,1,5,0.379863,0.414357,0,0,1,1,0,1,1,0.099837,0.00214
+Larry Flynt,Larry Flynt,18,0,0,0,0,0,0,0,0,0,0,0,0
+Paul Krassner,Paul Krassner,18,0,0,0,0,0,0,0,0,0,0,0,0
+Larry Visoki,Larry Visoki,19,6,0.304029,0.353012,241.5,0,9,9,0,9,9,0.104488,0.014569
+"Bill Clinton, Prince Andrew, Ehud Barak, Andres Pastrana Arango, Lawrence Summers, Ron Burkle, Kevin Spacey, Chris Tucker","Bill Clinton, Prince Andrew, Ehud Barak, Andres Pastrana Arango, Lawrence Summers, Ron Burkle, Kevin Spacey, Chris Tucker",19,7,0.233474,0.254145,0,1,0,1,1,0,1,0.011538,0.002274
+young girls,young girls,13,6,0.281356,0.300502,0,1,0,1,1,0,1,0.012637,0.002199
+St Thomas,St Thomas,13,6,0.281356,0.300502,0,1,0,1,1,0,1,0.012637,0.002199
+Teterboro Airport,Teterboro Airport,13,6,0.281356,0.300502,0,1,0,1,1,0,1,0.012637,0.002199
+Je Vacation,Je Vacation,13,6,0.281356,0.300502,0,1,0,1,1,0,1,0.012637,0.002199
+Lawrance Visoski,Lawrance Visoski,20,6,0.278523,0.297791,165,0,2,2,0,2,2,0.011916,0.005613
+Flight Star Maintenance,Flight Star Maintenance,20,7,0.218134,0.229145,0,1,0,1,1,0,1,0.002406,0.003284
+Lawrence M. Krauss,Lawrence M. Krauss,1,5,0.381609,0.418373,165,0,3,3,0,2,2,0.101881,0.005462
+Chile,Chile,1,6,0.276667,0.292972,0,1,0,1,1,0,1,0.010423,0.002446
+Lesley Groff,Lesley Groff,21,0,0,0,0,0,0,0,0,0,0,0,0
+Marilyn,Marilyn,21,0,0,0,0,0,0,0,0,0,0,0,0
+Leslie H. Wexner,Leslie H. Wexner,22,0,0,0,0,0,0,0,0,0,0,0,0
+Galaxy Aviation,Galaxy Aviation,22,0,0,0,0,0,0,0,0,0,0,0,0
+Mark L. Epstein,Mark L. Epstein,1,5,0.379863,0.414357,0,0,1,1,0,1,1,0.099837,0.00214
+Michael J. Boccio,Michael J. Boccio,23,0,0,0,0,0,0,0,0,0,0,0,0
+Boeing,Boeing,23,0,0,0,0,0,0,0,0,0,0,0,0
+Nadia Marcinkova,Nadia Marcinkova,24,0,0,0,0,0,0,0,0,0,0,0,0
+flight instructor and pilot,flight instructor and pilot,24,0,0,0,0,0,0,0,0,0,0,0,0
+Norbert Wiener,Norbert Wiener,25,0,0,0,0,0,0,0,0,0,0,0,0
+anti-aircraft fire targeting,anti-aircraft fire targeting,25,0,0,0,0,0,0,0,0,0,0,0,0
+anti-aircraft fire,anti-aircraft fire,25,0,0,0,0,0,0,0,0,0,0,0,0
+Peggy Siegal,Peggy Siegal,26,0,0,0,0,0,0,0,0,0,0,0,0
+Los Angeles,Los Angeles,26,0,0,0,0,0,0,0,0,0,0,0,0
+Professor Dershowitz,Professor Dershowitz,1,5,0.379863,0.414357,0,0,3,3,0,1,1,0.099837,0.004625
+Richard Ledgett,Richard Ledgett,27,0,0,0,0,0,0,0,0,0,0,0,0
+Hawaii,Hawaii,27,0,0,0,0,0,0,0,0,0,0,0,0
+Russ Adler,Russ Adler,28,0,0,0,0,0,0,0,0,0,0,0,0
+Bradley James Edwards,Bradley James Edwards,28,0,0,0,0,0,0,0,0,0,0,0,0
+Sarah Harrison,Sarah Harrison,2,8,0.203431,0.222741,0,0,4,4,0,1,1,0.005687,0.005363
+Scott Rothstein,Scott Rothstein,1,5,0.379863,0.414357,0,0,2,2,0,1,1,0.099837,0.003383
+Sean,Sean,29,0,0,0,0,0,0,0,0,0,0,0,0
+Eva,Eva,29,0,0,0,0,0,0,0,0,0,0,0,0
+Soon Suey Sing organization,Soon Suey Sing organization,30,0,0,0,0,0,0,0,0,0,0,0,0
+People's Republic of China flag,People's Republic of China flag,30,0,0,0,0,0,0,0,0,0,0,0,0
+Tim Ferriss,Tim Ferriss,31,0,0,0,0,0,0,0,0,0,0,0,0
+"Mendoza wine country, Argentina","Mendoza wine country, Argentina",31,0,0,0,0,0,0,0,0,0,0,0,0
+"Chiang Mai, Thailand","Chiang Mai, Thailand",3,6,0.294326,0.308635,0,1,0,1,1,0,1,0.015158,0.002294
+Vladimir Putin,Vladimir Putin,2,8,0.203431,0.222741,0,0,2,2,0,1,1,0.005687,0.003131
+Warren Justice,Warren Justice,12,7,0.225237,0.242341,165,0,2,2,0,2,2,0.004948,0.00606
+Launer,Launer,12,8,0.184035,0.194421,0,1,0,1,1,0,1,0.001932,0.003474
+WikiLeaks,WikiLeaks,14,0,0,0,0,0,0,0,0,0,0,0,0
+al Qaeda terrorists (19 hijackers),al Qaeda terrorists (19 hijackers),32,0,0,0,0,0,0,0,0,0,0,0,0
+"World Trade Center towers, Pentagon, and field in Shanksville","World Trade Center towers, Pentagon, and field in Shanksville",32,0,0,0,0,0,0,0,0,0,0,0,0
+document author (attorney),document author (attorney),33,0,0,0,0,0,0,0,0,0,0,0,0
+Jeffrey Epstein's summary judgment motion,Jeffrey Epstein's summary judgment motion,33,0,0,0,0,0,0,0,0,0,0,0,0
+Moscow airport,Moscow airport,2,7,0.247392,0.261302,0,1,0,1,1,0,1,0.005165,0.00242
+the witness,the witness,34,0,0,0,0,0,0,0,0,0,0,0,0
+underage girl,underage girl,34,0,0,0,0,0,0,0,0,0,0,0,0
+unnamed military commander,unnamed military commander,35,0,0,0,0,0,0,0,0,0,0,0,0
+El Al,El Al,35,0,0,0,0,0,0,0,0,0,0,0,0
+Larry Summers,Larry Summers,1,5,0.379863,0.414357,0,0,1,1,0,1,1,0.099837,0.00214
+Detective Joseph Recarey,Detective Joseph Recarey,1,5,0.379863,0.414357,0,0,1,1,0,1,1,0.099837,0.00214
+Russian intelligence,Russian intelligence,2,8,0.203431,0.222741,0,0,1,1,0,1,1,0.005687,0.002015
+producer,producer,1,5,0.379863,0.414357,0,0,1,1,0,1,1,0.099837,0.00214
+Nicky Haslam,Nicky Haslam,36,0,0,0,0,0,0,0,0,0,0,0,0
+England,England,36,0,0,0,0,0,0,0,0,0,0,0,0
+pilot,pilot,37,0,0,0,0,0,0,0,0,0,0,0,0
+Hudson River,Hudson River,37,0,0,0,0,0,0,0,0,0,0,0,0
+Kuti,Kuti,38,0,0,0,0,0,0,0,0,0,0,0,0
+Nairobi,Nairobi,38,0,0,0,0,0,0,0,0,0,0,0,0
+Benny Peled,Benny Peled,39,0,0,0,0,0,0,0,0,0,0,0,0
+larger force of 200 men,larger force of 200 men,39,0,0,0,0,0,0,0,0,0,0,0,0
+Sandy Berger,Sandy Berger,1,5,0.379863,0.414357,0,0,1,1,0,1,1,0.099837,0.00214
+Heidi Klum,Heidi Klum,1,5,0.379863,0.414357,0,0,1,1,0,1,1,0.099837,0.00214
+Matt Groning,Matt Groning,1,5,0.379863,0.414357,0,0,1,1,0,1,1,0.099837,0.00214
+Owen Wilson,Owen Wilson,40,0,0,0,0,0,0,0,0,0,0,0,0
+Larry Gagosian,Larry Gagosian,40,0,0,0,0,0,0,0,0,0,0,0,0
+Bruce Rinehart,Bruce Rinehart,3,5,0.381609,0.418373,0,0,2,2,0,2,2,0.111605,0.003573
+Company,Company,4,0,0,0,0,0,0,0,0,0,0,0,0
+Andrés Pastrana,Andrés Pastrana,1,5,0.379863,0.414357,0,0,1,1,0,1,1,0.099837,0.00214
+Anwar al-Sadat,Anwar al-Sadat,41,0,0,0,0,0,0,0,0,0,0,0,0
+Israel,Israel,41,0,0,0,0,0,0,0,0,0,0,0,0
+TT,TT,1,5,0.379863,0.414357,0,0,1,1,0,1,1,0.099837,0.00214
+Jerry King,Jerry King,42,0,0,0,0,0,0,0,0,0,0,0,0
+business jet market,business jet market,42,0,0,0,0,0,0,0,0,0,0,0,0
+Je vacation,Je vacation,12,6,0.285223,0.303414,0,0,1,1,0,1,1,0.013464,0.002537
+writer,writer,43,0,0,0,0,0,0,0,0,0,0,0,0
+Jeffrey Epstein's private plane N909JE,Jeffrey Epstein's private plane N909JE,43,0,0,0,0,0,0,0,0,0,0,0,0
+"Bill Clinton, Sandy Berger, Andres Pastrana, Alan Dershowitz","Bill Clinton, Sandy Berger, Andres Pastrana, Alan Dershowitz",44,0,0,0,0,0,0,0,0,0,0,0,0
+Britain,Britain,45,0,0,0,0,0,0,0,0,0,0,0,0
+Cuba,Cuba,46,0,0,0,0,0,0,0,0,0,0,0,0
+James Bartakowski,James Bartakowski,47,0,0,0,0,0,0,0,0,0,0,0,0
+MC2 models and other passengers,MC2 models and other passengers,48,0,0,0,0,0,0,0,0,0,0,0,0
+a former president,a former president,49,0,0,0,0,0,0,0,0,0,0,0,0
+aircraft flight log,aircraft flight log,50,0,0,0,0,0,0,0,0,0,0,0,0
+pilot logbook,pilot logbook,51,0,0,0,0,0,0,0,0,0,0,0,0
+cabinet,cabinet,52,0,0,0,0,0,0,0,0,0,0,0,0
+Kiev,Kiev,53,0,0,0,0,0,0,0,0,0,0,0,0
+investor,investor,54,0,0,0,0,0,0,0,0,0,0,0,0
+Debra,Debra,55,0,0,0,0,0,0,0,0,0,0,0,0
+plane,plane,56,0,0,0,0,0,0,0,0,0,0,0,0
+American Airlines,American Airlines,57,0,0,0,0,0,0,0,0,0,0,0,0

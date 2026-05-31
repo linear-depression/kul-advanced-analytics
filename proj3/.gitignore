@@ -9,8 +9,9 @@ wheels/
 # Virtual environments
 .venv
 
-# Vector DB
+# Vector DB and source data
 chroma_db/
+steam_games_reviews_25.sqlite
 
 # Environment
 .env

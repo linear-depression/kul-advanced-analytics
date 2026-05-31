@@ -101,17 +101,3 @@ Set `LLM_MODEL` in `.env` to any LiteLLM-compatible model string:
 ### System Prompt
 
 Edit `system_prompt.txt` in any text editor. Changes take effect on the next query (no restart needed).
-
-## Troubleshooting
-
-**"Collection steam_games does not exist"**
-Build the vector database first: `uv run python build_vector_db.py`
-
-**Ollama OOM / "model requires more system memory"**
-The `num_ctx=4096` setting in `recommender.py` keeps KV cache small. If it still happens, reduce `num_ctx` further or close other memory-heavy apps to free unified memory.
-
-**Empty LLM answers**
-The code uses `think=False` so Qwen3.5 returns the answer directly. `_strip_thinking()` strips any `<think>...</think>` block without surfacing it; if the model returns nothing usable, `generate_answer()` falls back to listing the top matches. Note that enabling `think=True` on the `ollama/` provider makes the answer come back empty — the reasoning consumes the token budget and is discarded. To inspect the reasoning trace, see `notebook/qwen-thinking-benchmark.ipynb`, which uses the `ollama_chat/` provider to return reasoning separately from the answer.
-
-**Slow queries**
-Run `ollama ps` to confirm Metal GPU is active. CPU-only is ~60s/query. On the Apple M5 Pro with Metal: ~11s/query (think=False) or ~75s/query (think=True, because thinking generates far more tokens). See `notebook/qwen-thinking-benchmark.ipynb`.

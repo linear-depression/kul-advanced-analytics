@@ -21,11 +21,11 @@ def main():
     run_id = datetime.now().strftime("%Y%m%d_%H%M%S")
     
      # Ensure our output directories exist
-    os.makedirs("proj2/outputs/logs", exist_ok=True)
-    os.makedirs("proj2/outputs/saved_models", exist_ok=True)
+    os.makedirs("outputs/logs", exist_ok=True)
+    os.makedirs("outputs/saved_models", exist_ok=True)
 
     # Set up basic Python text logging
-    log_filename = f"proj2/outputs/logs/training_log_{run_id}.txt"
+    log_filename = f"outputs/logs/training_log_{run_id}.txt"
     logging.basicConfig(
         level=logging.INFO,
         format="%(asctime)s [%(levelname)s] %(message)s",
@@ -33,15 +33,16 @@ def main():
     )
     
     # Set up TensorBoard writer
-    tb_writer = SummaryWriter(f"proj2/outputs/logs/tensorboard_{run_id}")
+    tb_writer = SummaryWriter(f"outputs/logs/tensorboard_{run_id}")
 
     logging.info(f"--- Starting new pipeline run: {run_id} ---")
     logging.info(f"Using device: {config.DEVICE}")
+    logging.info(f"Mixed precision (AMP): {config.USE_AMP} | DataLoader workers: {config.NUM_WORKERS} | Batch size: {config.BATCH_SIZE}")
 
     # 'data_dir' points to the root 'data' folder.
     # The code joins this with 'images/OLD011.jpg' to find the actual files.
-    data_dir = "./proj2/data"
-    json_path = "./proj2/data/minifigs.json"
+    data_dir = "./data"
+    json_path = "./data/minifigs.json"
 
     # 1. Prepare our data
     train_df, val_df, test_df, mlb, pos_weight_tensor = prepare_dataframes(
@@ -90,7 +91,7 @@ def main():
     # 6. Save final model
     logging.info("Saving final model...")
     
-    save_dir = "proj2/outputs/saved_models"
+    save_dir = "outputs/saved_models"
     os.makedirs(save_dir, exist_ok=True) # Defensive programming!
     
     # Define a clean, static path for your final model

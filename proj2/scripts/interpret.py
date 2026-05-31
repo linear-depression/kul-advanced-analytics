@@ -87,7 +87,7 @@ def generate_gradcam(model, test_loader, device, mlb, run_id="latest"):
     plt.tight_layout()
     fig.subplots_adjust(top=0.90, hspace=0.3) # hspace adds room between the rows
     
-    save_dir = "proj2/outputs/plots"
+    save_dir = "outputs/plots"
     os.makedirs(save_dir, exist_ok=True)
     save_path = f"{save_dir}/gradcam_comparison_{run_id}.png"
     plt.savefig(save_path, bbox_inches='tight')

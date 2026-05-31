@@ -14,7 +14,10 @@ def train_model(model, train_loader, val_loader, criterion, optimizer, device, r
     best_val_loss = float('inf') # Set to infinity initially
     save_dir = "outputs/saved_models"
     best_model_path = f"{save_dir}/best_model_{run_id}.pth"
-    os.makedirs(save_dir, exist_ok=True) 
+    os.makedirs(save_dir, exist_ok=True)
+
+    # Mixed precision: run the forward pass in float16 on GPU for a large speedup.
+    amp_enabled = config.USE_AMP and device.type in ("cuda", "mps")
 
     # Loop over a predifined number of epochs:
     for epoch in range(config.EPOCHS):
@@ -39,11 +42,10 @@ def train_model(model, train_loader, val_loader, criterion, optimizer, device, r
             # Clear old gradients
             optimizer.zero_grad()
 
-            # Forward pass
-            outputs = model(inputs)
-
-            # Calculate loss
-            loss = criterion(outputs, labels)
+            # Forward pass + loss (mixed precision when enabled)
+            with torch.autocast(device_type=device.type, dtype=torch.float16, enabled=amp_enabled):
+                outputs = model(inputs)
+                loss = criterion(outputs, labels)
 
             # Backward pass & update weights
             loss.backward()
@@ -77,9 +79,10 @@ def train_model(model, train_loader, val_loader, criterion, optimizer, device, r
             for inputs, labels in val_loader:
                 inputs, labels = inputs.to(device), labels.to(device)
 
-                # Forward pass
-                outputs = model(inputs)
-                loss = criterion(outputs, labels)
+                # Forward pass (mixed precision when enabled)
+                with torch.autocast(device_type=device.type, dtype=torch.float16, enabled=amp_enabled):
+                    outputs = model(inputs)
+                    loss = criterion(outputs, labels)
 
                 # Track metrics
                 running_val_loss += loss.item() * inputs.size(0)

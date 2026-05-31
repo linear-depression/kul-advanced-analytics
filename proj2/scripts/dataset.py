@@ -6,8 +6,9 @@ from sklearn.preprocessing import MultiLabelBinarizer
 import torch
 from torch.utils.data import Dataset, DataLoader
 from torchvision import transforms
-from torch.utils.data import WeightedRandomSampler 
+from torch.utils.data import WeightedRandomSampler
 import numpy as np
+import scripts.config as config
 
 
 # ==========================================
@@ -157,18 +158,28 @@ def get_dataloaders(train_df, val_df, test_df, batch_size=32):
         replacement=True
     )
 
+    # Shared throughput settings (see scripts/config.py). persistent_workers keeps the
+    # workers (slow to spawn on macOS) alive across epochs instead of re-launching them.
+    loader_kwargs = {
+        "num_workers": config.NUM_WORKERS,
+        "pin_memory": config.PIN_MEMORY,
+    }
+    if config.NUM_WORKERS > 0:
+        loader_kwargs["persistent_workers"] = True
+        loader_kwargs["prefetch_factor"] = 4
+
     # CRITICAL: When using a custom sampler, you MUST set shuffle=False!
     # The sampler handles the shuffling inherently based on the weights.
     train_loader = DataLoader(
-        train_dataset, 
-        batch_size=batch_size, 
+        train_dataset,
+        batch_size=batch_size,
         sampler=sampler,   # <-- Pass the sampler here
         shuffle=False,     # <-- Set to False!
-        num_workers=2
+        **loader_kwargs,
     )
-    
+
     # Validation and Test loaders remain completely standard
-    val_loader = DataLoader(val_dataset, batch_size=batch_size, shuffle=False, num_workers=2)
-    test_loader = DataLoader(test_dataset, batch_size=batch_size, shuffle=False, num_workers=2)
+    val_loader = DataLoader(val_dataset, batch_size=batch_size, shuffle=False, **loader_kwargs)
+    test_loader = DataLoader(test_dataset, batch_size=batch_size, shuffle=False, **loader_kwargs)
 
     return train_loader, val_loader, test_loader

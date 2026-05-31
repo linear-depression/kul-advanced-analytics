@@ -4,6 +4,7 @@ from sklearn import metrics
 import matplotlib.pyplot as plt
 import seaborn as sns
 import os
+import scripts.config as config
 
 def evaluate_model(trained_model, test_loader, config_device, mlb, run_id="latest"):
     trained_model.eval()
@@ -11,10 +12,12 @@ def evaluate_model(trained_model, test_loader, config_device, mlb, run_id="lates
     all_predicted = []
     all_true_labels = []
 
+    amp_enabled = config.USE_AMP and config_device.type in ("cuda", "mps")
     with torch.no_grad():
         for inputs, labels in test_loader:
             inputs, labels = inputs.to(config_device), labels.to(config_device)
-            outputs = trained_model(inputs)
+            with torch.autocast(device_type=config_device.type, dtype=torch.float16, enabled=amp_enabled):
+                outputs = trained_model(inputs)
 
             # Multilabel logic
             probabilities = torch.sigmoid(outputs)
@@ -47,8 +50,10 @@ def evaluate_model(trained_model, test_loader, config_device, mlb, run_id="lates
     plt.xticks(rotation=45, ha='right')
     plt.tight_layout()
     
-    save_dir = "proj2/outputs/plots"
+    save_dir = "outputs/plots"
     os.makedirs(save_dir, exist_ok=True) 
     save_path = f"{save_dir}/f1_scores_{run_id}.png"
-    plt.savefig(save_path) 
+    plt.savefig(save_path)
     print(f"F1-Score chart saved to {save_path}")
+
+    return report_dict

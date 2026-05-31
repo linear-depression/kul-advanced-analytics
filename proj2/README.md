@@ -46,16 +46,24 @@ To ensure the CNN is learning actual Lego features and not "cheating" by finding
 
 ## 7. How to Run the Pipeline
 
-1. Ensure the dataset is downloaded and extracted to `data/images/` and the JSON is located at `data/minifigs.json`.
-2. Install requirements: ran the terminal commands documented in the main README.me
-3. Download the data by running the downloader.py script
-```
-python proj2/scripts/downloader.py
-```
-3. Execute the main pipeline
+This project uses [`uv`](https://docs.astral.sh/uv/) for dependency management. Run every command from the `proj2/` folder.
 
+1. Install dependencies (creates an isolated environment from `pyproject.toml` / `uv.lock`):
 ```
-python proj2/main.py
+uv sync
 ```
+2. Download the dataset (saves the [images](https://e.pcloud.link/publink/show?code=XZYQmGZwIUEyLDBKRmnOsRuq4zub5BpRs2X) and [`minifigs.json`](https://seppe.net/aa/assignment2/minifigs.json) into `data/`):
+```
+uv run python scripts/downloader.py
+```
+3. Execute the full pipeline (data prep → training → evaluation → Grad-CAM):
+```
+uv run python main.py
+```
+4. (Optional) Monitor training in real time:
+```
+uv run tensorboard --logdir=outputs/logs
+```
+
 
 

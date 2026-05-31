@@ -1,0 +1,28 @@
+[project]
+name = "proj2"
+version = "0.1.0"
+description = "Advanced Analytics Project 2 — Lego Minifigure multilabel computer vision pipeline"
+readme = "README.md"
+requires-python = ">=3.10"
+dependencies = [
+    "torch",
+    "torchvision",
+    "numpy",
+    "pandas",
+    "pillow",
+    "scikit-learn",
+    "matplotlib",
+    "seaborn",
+    "grad-cam",
+    "tensorboard",
+]
+
+[dependency-groups]
+dev = [
+    "ipykernel",
+    "jupyter",
+    "ruff",
+]
+
+[tool.uv]
+package = false

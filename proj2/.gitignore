@@ -1,0 +1,35 @@
+# .gitignore for the projects
+
+
+# Data 
+data/images/
+data/minifigs.json
+
+# Outputs dump 
+outputs/logs/
+outputs/saved_models/
+outputs/plots/
+
+# report dump 
+report/*.html
+
+# Python / Environment
+__pycache__/
+*.py[cod]
+*~
+.venv/
+
+# Jupyter Notebook
+.ipynb_checkpoints/
+
+# LaTeX generated files
+report/*.aux
+report/*.fdb_latexmk
+report/*.fls
+report/*.log
+report/*.synctex.gz
+report/*.out
+
+# OS Generated
+.DS_Store
+

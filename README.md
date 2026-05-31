@@ -1,67 +1,26 @@
-# Project Setup
+# Advanced Analytics in a Big Data World — Group 16
 
-This project uses a Python virtual environment to manage dependencies.
+KU Leuven · supervised by Prof. Seppe vanden Broucke
 
----
+**Members:** Xinran Wang (r1014790) · Quang Viet Nguyen (r1079923) · Xinyi Li (r1069874) · Yulan Ruan (r1070484) · Xinyu Yang (r1020926)
 
-## Getting Started
+## Who covers which part
 
-### 1. Create the virtual environment
+Each assignment's report and code live in the matching `projN` folder of the repo.
 
-Run this once when setting up the project for the first time:
+| Assignment | Author(s) | Code |
+|------------|-----------|------|
+| 1 — Predicting Future Customer Revenue | Xinran Wang | `proj1` |
+| 2 — Lego Minifigs Classification Using Transfer Learning | Quang Viet Nguyen, Xinyu Yang | `proj2` |
+| 3 — Harnessing LLMs for Gaming Recommendation | Xinyi Li, Xinyu Yang | `proj3` |
+| 4 — A Graph Analysis of Jeffrey Epstein's Aviation Criminal Network | Yulan Ruan | `proj4` |
 
-```bash
-python -m venv venv
+## Folder structure
+
+```
+├── proj1             # Assignment 1 
+├── proj2             # Assignment 2 
+├── proj3             # Assignment 3 
+├── proj4             # Assignment 4 
 ```
 
-### 2. Activate the virtual environment
-
-Run this every time you return to work on the project:
-
-```bash
-source venv/bin/activate
-```
-
-> On Windows, use `venv\Scripts\activate` instead.
-
----
-
-## Managing Dependencies
-
-### Install a package
-
-```bash
-pip install requests
-```
-
-### Save installed packages to `requirements.txt`
-
-```bash
-pip freeze > requirements.txt
-```
-
-### Install all dependencies from `requirements.txt`
-
-Useful when cloning the project or setting up a new environment:
-
-```bash
-pip install -r requirements.txt
-```
-
-### Install additional packages
-
-```bash
-pip install python-dotenv
-```
-
-> Don't forget to run `pip freeze > requirements.txt` again after installing new packages.
-
----
-
-## Deactivating the Virtual Environment
-
-When you're done working, deactivate the environment with:
-
-```bash
-deactivate
-```
